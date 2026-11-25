@@ -1,9 +1,17 @@
-Django Girls Blog {% for post in posts %}
-{{ post.title }}
-{{ post.text }}
+<h1>Django Girls Blog</h1>
+
+{% for post in posts %}
+
+<h2>{{ post.title }}</h2>
+
+<p>{{ post.text }}</p>
 
 {% if post.published_date %}
-Published: {{ post.published_date }}
+<p>Published: {{ post.published_date }}</p>
+{% endif %}
 
-{% endif %} {% if not forloop.last %}
-{% endif %} {% endfor %}
+{% if not forloop.last %}
+<hr>
+{% endif %}
+
+{% endfor %}
